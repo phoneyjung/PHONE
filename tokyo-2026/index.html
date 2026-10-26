@@ -19,17 +19,17 @@
 :root{
   --bg:#FBF6EC;--surface:#FFFFFF;--ink:#172B3F;--muted:#536476;--line:#E6DCCB;
   --blue:#1F4E79;--blue-soft:#E4EDF6;--accent:#C8401A;
-  --ok:#256B43;--ok-soft:#E2F1E7;--warn:#875608;--warn-soft:#FBEFD5;--no:#B0352A;--no-soft:#FBE4E0;
+  --yt:#C4161C;--ok:#256B43;--ok-soft:#E2F1E7;--warn:#875608;--warn-soft:#FBEFD5;--no:#B0352A;--no-soft:#FBE4E0;
   --font:'IBM Plex Sans Thai',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0F1A26;--surface:#172636;--ink:#EAF0F6;--muted:#A3B4C6;--line:#2B3C50;
   --blue:#8DBBE6;--blue-soft:#1E3449;--accent:#F2916D;
-  --ok:#7CCB9C;--ok-soft:#183427;--warn:#E6B862;--warn-soft:#33291A;--no:#F08A7D;--no-soft:#3A2220;color-scheme:dark}}
+  --yt:#FF6B6B;--ok:#7CCB9C;--ok-soft:#183427;--warn:#E6B862;--warn-soft:#33291A;--no:#F08A7D;--no-soft:#3A2220;color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0F1A26;--surface:#172636;--ink:#EAF0F6;--muted:#A3B4C6;--line:#2B3C50;
   --blue:#8DBBE6;--blue-soft:#1E3449;--accent:#F2916D;
-  --ok:#7CCB9C;--ok-soft:#183427;--warn:#E6B862;--warn-soft:#33291A;--no:#F08A7D;--no-soft:#3A2220;color-scheme:dark}
+  --yt:#FF6B6B;--ok:#7CCB9C;--ok-soft:#183427;--warn:#E6B862;--warn-soft:#33291A;--no:#F08A7D;--no-soft:#3A2220;color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6}
 .wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:flex;flex-direction:column;gap:28px}
@@ -78,9 +78,13 @@ p{margin:0}
 .vd span{flex:none;font-size:.8rem;font-weight:700;padding:1px 8px;border-radius:999px}
 .vd .g{background:var(--ok-soft);color:var(--ok)}
 .vd .b{background:var(--warn-soft);color:var(--warn)}
-.btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .btns a{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:48px;padding:6px;border-radius:12px;border:1.5px solid var(--blue);color:var(--blue);text-decoration:none;font-weight:600;font-size:.95rem;text-align:center}
 .btns a:first-child{background:var(--blue);color:var(--surface)}
+.btns a.yt{border-color:var(--yt);color:var(--yt)}
+.play{display:inline-grid;place-items:center;width:20px;height:14px;margin-right:6px;border-radius:4px;background:var(--yt);color:#FFFFFF;font-size:.55rem;vertical-align:1px}
+.btns .sub{font-size:.75rem;font-weight:400;color:var(--muted)}
+dd a{color:var(--blue)}
 .tag{display:inline-block;margin-top:2px;font-size:.7rem;font-weight:700;padding:0 8px;border-radius:999px;background:var(--accent);color:#FFFFFF}
 details summary{cursor:pointer;font-weight:600;color:var(--blue);padding:6px 0;list-style-position:inside}
 .card details dl{margin:10px 0 0;display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px 12px;font-size:.92rem}
@@ -134,7 +138,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>อาหารเช้ารวมแล้ว</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ห้อง 38 ตร.ม. + เตียงเสริม</li><li class="chip warn"><span class="ic" aria-hidden="true">!</span>เอารถออกแต่ละครั้งเสียค่าจอดใหม่</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ซูเปอร์มาร์เก็ตในตึก</li></ul>
   <p class="vd"><span class="g">ดี</span>ราคาดีมาก ห้องกว้าง ติด Skytree และสถานี</p>
   <p class="vd"><span class="b">ระวัง</span>เรทราคานี้ยกเลิกไม่ได้ · อาหารเช้าของลูกอาจจ่ายเพิ่ม</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/richmond-hotel-premier-tokyo-oshiage.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com <span class="tag">ถูกสุด</span></a><a href="https://www.agoda.com/richmond-hotel-premier-tokyo-oshiage/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Richmond%20Hotel%20Premier%20Tokyo%20Schole&amp;query_place_id=ChIJlTrCJyqPGGARe9oTcpE9r3k" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/richmond-hotel-premier-tokyo-oshiage.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com <span class="tag">ถูกสุด</span></a><a href="https://www.agoda.com/richmond-hotel-premier-tokyo-oshiage/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Richmond%20Hotel%20Premier%20Tokyo%20Schole&amp;query_place_id=ChIJlTrCJyqPGGARe9oTcpE9r3k" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=dzWGlSwwgIM" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com ห้องเดียว รวมอาหารเช้า เรทไม่คืนเงิน · เรทยกเลิกได้ 56,069 · แบบ 2 ห้อง 80,340 · อาหารเช้าของเด็กอาจจ่ายเพิ่ม · Trivago: Booking.com ถูกที่สุด · trivago DEALS 59,140</dd>
@@ -144,7 +148,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>ซูเปอร์มาร์เก็ต Life ในตึกเดียวกัน (09:30–24:00) · FamilyMart ที่สถานีประมาณ 70 ม. · 7-Eleven 24 ชม. ประมาณ 160 ม.</dd>
       <dt>การเดินทาง</dt><dd>Skytree อยู่ติดโรงแรม · ใกล้ทางขึ้นทางด่วน Mukojima (Shuto สาย 6) · ติดสถานี Oshiage</dd>
       <dt>พิกัด</dt><dd class="mono">35.710234, 139.813758</dd>
-      <dt>รีวิว</dt><dd>Booking.com 9.1</dd>
+      <dt>รีวิว</dt><dd>Booking.com 9.1 · <a href="https://www.youtube.com/results?search_query=Richmond+Hotel+Premier+Tokyo+Schole+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:95.0%"></i></span><b>9.5</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:50%"></i></span><b>5</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:100%"></i></span><b>10</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div></div>
   </details>
@@ -154,7 +158,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>อาหารเช้ารวมแล้ว</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>2 ห้อง ห้องละ 28.5 ตร.ม.</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>จอดรถตู้ได้ 3,000 เยน/คืน</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ร้านสะดวกซื้อ 40 ม.</li></ul>
   <p class="vd"><span class="g">ดี</span>ทำเลเข้ากับแผนที่สุด แยก 2 ห้องได้ จอดรถสะดวก</p>
   <p class="vd"><span class="b">ระวัง</span>แพงกว่า Richmond ประมาณ 29,500 บาท · ที่จอดจองไม่ได้ มาก่อนได้ก่อน</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/tobu-levant-tokyo.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=2" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/tobu-hotel-levant-tokyo/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=2" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Tobu%20Hotel%20Levant%20Tokyo&amp;query_place_id=ChIJBbNl_1yNGGARuA1NfRdQ4cs" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/tobu-levant-tokyo.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=2" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/tobu-hotel-levant-tokyo/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=2" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Tobu%20Hotel%20Levant%20Tokyo&amp;query_place_id=ChIJBbNl_1yNGGARuA1NfRdQ4cs" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=SlMbhNsjej4" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com 2 ห้อง รวมอาหารเช้า · ห้องเดียวรวมอาหารเช้า 91,842 · Trivago ไม่มีราคา</dd>
@@ -164,7 +168,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>FamilyMart ประมาณ 40 ม. (07:00–22:00) · 7-Eleven และ Lawson 24 ชม. ไม่ถึง 100 ม. · ซูเปอร์มาร์เก็ต LIFE</dd>
       <dt>การเดินทาง</dt><dd>ใกล้ทางขึ้นทางด่วน Kinshicho (Shuto สาย 7) ต่อไปนาริตะและ Kisarazu ได้ · Skytree ประมาณ 1.4 กม. · สถานี Kinshicho 5 นาทีถ้าอยากนั่งรถไฟ · แผนเดิมเขียนจากที่นี่</dd>
       <dt>พิกัด</dt><dd class="mono">35.697213, 139.810939</dd>
-      <dt>รีวิว</dt><dd>Booking.com 8.8</dd>
+      <dt>รีวิว</dt><dd>Booking.com 8.8 · <a href="https://www.youtube.com/results?search_query=Tobu+Hotel+Levant+Tokyo+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:59.0%"></i></span><b>5.9</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:100%"></i></span><b>10</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:60%"></i></span><b>6</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:90%"></i></span><b>9</b></div></div>
   </details>
@@ -174,7 +178,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>อาหารเช้ารวมแล้ว</li><li class="chip warn"><span class="ic" aria-hidden="true">!</span>ห้องเดียว 33 ตร.ม. 3 เตียง</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>จอดรถตู้ได้ 2,000 เยน/คืน</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>Lawson ในโรงแรม</li></ul>
   <p class="vd"><span class="g">ดี</span>ติด Tokyo Dome City มีเครื่องเล่นให้ลูก · ที่จอดใหญ่ 283 คัน</p>
   <p class="vd"><span class="b">ระวัง</span>ลูกต้องนอนร่วมเตียง</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/tokyo-dome-hotel.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/tokyo-dome-hotel/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Tokyo%20Dome%20Hotel&amp;query_place_id=ChIJRZ_bSz-MGGARPMc7IsdsZiY" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/tokyo-dome-hotel.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/tokyo-dome-hotel/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Tokyo%20Dome%20Hotel&amp;query_place_id=ChIJRZ_bSz-MGGARPMc7IsdsZiY" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=rCYNOXztmaQ" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com ห้องเดียว รวมอาหารเช้า · ไม่รวมอาหารเช้า 68,336 · Trivago ไม่มีราคา</dd>
@@ -184,7 +188,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>Lawson 24 ชม. อยู่ชั้น 2 ของโรงแรม · 7-Eleven ประมาณ 140 ม.</dd>
       <dt>การเดินทาง</dt><dd>อยู่กลางเมือง ใกล้ Harajuku ที่สุดในกลุ่ม (ประมาณ 6 กม.) · ใกล้ทางขึ้นทางด่วน Iidabashi (Shuto สาย 5) · ไกล Kisarazu และนาริตะกว่าที่อื่น · ติด Tokyo Dome City</dd>
       <dt>พิกัด</dt><dd class="mono">35.703667, 139.753393</dd>
-      <dt>รีวิว</dt><dd>Booking.com 8.7</dd>
+      <dt>รีวิว</dt><dd>Booking.com 8.7 · <a href="https://www.youtube.com/results?search_query=Tokyo+Dome+Hotel+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:59.0%"></i></span><b>5.9</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:90%"></i></span><b>9</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:100%"></i></span><b>10</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div></div>
   </details>
@@ -194,7 +198,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>อาหารเช้ารวมแล้ว</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ห้องเดียว 35 ตร.ม.</li><li class="chip warn"><span class="ic" aria-hidden="true">!</span>จอดได้ ต้องจองก่อน</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>7-Eleven ติดโรงแรม</li></ul>
   <p class="vd"><span class="g">ดี</span>รีวิว 9.1 ติดสถานี Asakusa · มีห้องธีม Hello Kitty (ราคาแยก)</p>
   <p class="vd"><span class="b">ระวัง</span>แพง และต้องจองที่จอดล่วงหน้า</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/asakusa-tobu.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/asakusa-tobu-hotel/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Asakusa%20Tobu%20Hotel&amp;query_place_id=ChIJ8UTIv8aOGGARrFzeWHTIBKU" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/asakusa-tobu.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/asakusa-tobu-hotel/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Asakusa%20Tobu%20Hotel&amp;query_place_id=ChIJ8UTIv8aOGGARrFzeWHTIBKU" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=URYsKLDu0fA" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span> <span class="tag">คลิปไทย</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com ห้องเดียว รวมอาหารเช้า · ไม่รวมอาหารเช้า 81,043 · Trivago ไม่มีราคา</dd>
@@ -204,7 +208,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>7-Eleven ติดโรงแรม</dd>
       <dt>การเดินทาง</dt><dd>ติดสถานี Asakusa · สาย Ginza ไป Ueno และ Omotesando ได้ตรง · สาย Tobu ไป Skytree 1 สถานี</dd>
       <dt>พิกัด</dt><dd class="mono">35.711385, 139.797425</dd>
-      <dt>รีวิว</dt><dd>Booking.com 9.1</dd>
+      <dt>รีวิว</dt><dd>Booking.com 9.1 · <a href="https://www.youtube.com/results?search_query=Asakusa+Tobu+Hotel+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:48.0%"></i></span><b>4.8</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:100%"></i></span><b>10</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div></div>
   </details>
@@ -214,7 +218,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip no"><span class="ic" aria-hidden="true">✕</span>ไม่มีอาหารเช้า แต่มีครัว</li><li class="chip warn"><span class="ic" aria-hidden="true">!</span>ห้อง 30 ตร.ม. มีเตียงสองชั้น</li><li class="chip warn"><span class="ic" aria-hidden="true">!</span>จอดได้ ต้องจองก่อน</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>7-Eleven 40 ม.</li></ul>
   <p class="vd"><span class="g">ดี</span>ถูกที่สุด มีครัวและเครื่องซักผ้าในห้อง</p>
   <p class="vd"><span class="b">ระวัง</span>ไม่มีอาหารเช้า · เรทราคานี้ยกเลิกไม่ได้ · เช็กเอาต์ 10:00</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/monday-apart-premium-ueno.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/monday-apart-premium-ueno/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda <span class="tag">ถูกสุด</span></a><a href="https://www.google.com/maps/search/?api=1&amp;query=MONday%20Apart%20Premium%20Ueno&amp;query_place_id=ChIJb5nSLeKPGGARqPRN737GMls" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/monday-apart-premium-ueno.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/monday-apart-premium-ueno/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda <span class="tag">ถูกสุด</span></a><a href="https://www.google.com/maps/search/?api=1&amp;query=MONday%20Apart%20Premium%20Ueno&amp;query_place_id=ChIJb5nSLeKPGGARqPRN737GMls" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=d9-1fn0l9Yk" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Agoda ห้องเดียว ไม่มีอาหารเช้า เรทไม่คืนเงิน · Booking.com 73,839 · Trivago: Agoda ถูกที่สุด · Priceline 46,319</dd>
@@ -224,7 +228,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>7-Eleven 24 ชม. ประมาณ 40 ม.</dd>
       <dt>การเดินทาง</dt><dd>สถานี Ueno เดิน 10–12 นาที</dd>
       <dt>พิกัด</dt><dd class="mono">35.716847, 139.781797</dd>
-      <dt>รีวิว</dt><dd>Booking.com 8.7</dd>
+      <dt>รีวิว</dt><dd>Booking.com 8.7 · <a href="https://www.youtube.com/results?search_query=MONday+Apart+Premium+Ueno+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:60%"></i></span><b>6</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:100%"></i></span><b>10</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:90%"></i></span><b>9</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:30%"></i></span><b>3</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div></div>
   </details>
@@ -234,7 +238,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip warn"><span class="ic" aria-hidden="true">!</span>อาหารเช้าจ่ายเพิ่ม</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ห้อง 39–40 ตร.ม. มีบ่ออาบน้ำ</li><li class="chip no"><span class="ic" aria-hidden="true">✕</span>รถตู้น่าจะเข้าที่จอดไม่ได้</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>7-Eleven 80 ม.</li></ul>
   <p class="vd"><span class="g">ดี</span>ห้องใหญ่ อยู่ใจกลาง Ueno เดินไป Ameyoko ได้</p>
   <p class="vd"><span class="b">ระวัง</span>แพงที่สุด และรถตู้น่าจะจอดในโรงแรมไม่ได้</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/amp-here-tokyo-ueno.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/here-tokyo-ueno/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda <span class="tag">ถูกสุด</span></a><a href="https://www.google.com/maps/search/?api=1&amp;query=%26Here%20TOKYO%20UENO&amp;query_place_id=ChIJfxcX8E2NGGARwjCdiIe1S4k" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/amp-here-tokyo-ueno.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/here-tokyo-ueno/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda <span class="tag">ถูกสุด</span></a><a href="https://www.google.com/maps/search/?api=1&amp;query=%26Here%20TOKYO%20UENO&amp;query_place_id=ChIJfxcX8E2NGGARwjCdiIe1S4k" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=uDG3MsuIjI0" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Agoda ห้องเดียว ไม่รวมอาหารเช้า (เพิ่มประมาณ 1,980 เยน/คน/วัน) · Booking.com 102,439 ยกเลิกฟรี · Trivago: Agoda ถูกที่สุด</dd>
@@ -244,7 +248,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>7-Eleven ประมาณ 80 ม. · Lawson ประมาณ 100 ม. (24 ชม. ทั้งคู่)</dd>
       <dt>การเดินทาง</dt><dd>สถานี Ueno เดินประมาณ 5 นาที ตรงข้ามสวน Ueno · เดินถึง Ameyoko และ TAKEYA</dd>
       <dt>พิกัด</dt><dd class="mono">35.709325, 139.770940</dd>
-      <dt>รีวิว</dt><dd>Booking.com 8.7</dd>
+      <dt>รีวิว</dt><dd>Booking.com 8.7 · <a href="https://www.youtube.com/results?search_query=%26Here+TOKYO+UENO+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:40%"></i></span><b>4</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:30%"></i></span><b>3</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:90%"></i></span><b>9</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:60%"></i></span><b>6</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div></div>
   </details>
@@ -254,7 +258,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip no"><span class="ic" aria-hidden="true">✕</span>ไม่มีอาหารเช้า แต่มีครัว</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>ห้อง 38 ตร.ม.</li><li class="chip no"><span class="ic" aria-hidden="true">✕</span>ไม่มีที่จอด ต้องใช้ลานสาธารณะ</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>7-Eleven 30 ม.</li></ul>
   <p class="vd"><span class="g">ดี</span>ห้องกว้าง มีครัวและเครื่องซักผ้า ใกล้สถานี Ueno</p>
   <p class="vd"><span class="b">ระวัง</span>ไม่มีที่จอดและไม่มีอาหารเช้า</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/aima-dong-jing.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/hotel-aima/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=AIMA%20Ueno%20East&amp;query_place_id=ChIJI1VUdnqPGGARVX7UouEL6Rk" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/aima-dong-jing.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=1" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/hotel-aima/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=1" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=AIMA%20Ueno%20East&amp;query_place_id=ChIJI1VUdnqPGGARVX7UouEL6Rk" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/results?search_query=AIMA+Ueno+East+review" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span> <span class="sub">ค้นหาคลิป</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com ห้องเดียว ไม่มีอาหารเช้า · ยังไม่มีราคาบน Trivago</dd>
@@ -264,7 +268,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>7-Eleven 24 ชม. ประมาณ 30 ม.</dd>
       <dt>การเดินทาง</dt><dd>สถานี Ueno เดินประมาณ 5 นาที</dd>
       <dt>พิกัด</dt><dd class="mono">35.710490, 139.777539</dd>
-      <dt>รีวิว</dt><dd>Booking.com 9</dd>
+      <dt>รีวิว</dt><dd>Booking.com 9 · <a href="https://www.youtube.com/results?search_query=AIMA+Ueno+East+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:80%"></i></span><b>8</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:45.0%"></i></span><b>4.5</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:30%"></i></span><b>3</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:90%"></i></span><b>9</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:30%"></i></span><b>3</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div></div>
   </details>
@@ -274,7 +278,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
   <ul class="chips"><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>อาหารเช้ารวมแล้ว</li><li class="chip no"><span class="ic" aria-hidden="true">✕</span>2 ห้อง ห้องละ 20 ตร.ม.</li><li class="chip no"><span class="ic" aria-hidden="true">✕</span>รถตู้น่าจะเข้าที่จอดไม่ได้</li><li class="chip ok"><span class="ic" aria-hidden="true">✓</span>7-Eleven 200 ม.</li></ul>
   <p class="vd"><span class="g">ดี</span>ราคาถูก รวมอาหารเช้า</p>
   <p class="vd"><span class="b">ระวัง</span>ห้องเล็กมาก และรถตู้น่าจะจอดไม่ได้</p>
-  <div class="btns"><a href="https://www.booking.com/hotel/jp/sunroute-asakusa.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=2" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/hotel-sunroute-asakusa/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=2" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel%20Sunroute%20Asakusa&amp;query_place_id=ChIJnTTctAyMGGARGGfA9Zr0sgM" target="_blank" rel="noopener">แผนที่</a></div>
+  <div class="btns"><a href="https://www.booking.com/hotel/jp/sunroute-asakusa.html?checkin=2026-12-18&amp;checkout=2026-12-23&amp;group_adults=3&amp;group_children=1&amp;age=6&amp;selected_currency=THB&amp;no_rooms=2" target="_blank" rel="noopener">Booking.com</a><a href="https://www.agoda.com/hotel-sunroute-asakusa/hotel/tokyo-jp.html?checkIn=2026-12-18&amp;los=5&amp;adults=3&amp;children=1&amp;childages=6&amp;rooms=2" target="_blank" rel="noopener">Agoda</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel%20Sunroute%20Asakusa&amp;query_place_id=ChIJnTTctAyMGGARGGfA9Zr0sgM" target="_blank" rel="noopener">แผนที่</a><a class="yt" href="https://www.youtube.com/watch?v=8Jk6WOIM1jA" target="_blank" rel="noopener"><span><span class="play" aria-hidden="true">▶</span>รีวิว YouTube</span></a></div>
   <details><summary>รายละเอียดทั้งหมด</summary>
     <dl>
       <dt>ราคา</dt><dd>Booking.com 2 ห้อง รวมอาหารเช้า · ไม่รวมอาหารเช้า 39,621 · Trivago ไม่มีราคา</dd>
@@ -284,7 +288,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
       <dt>ร้านสะดวกซื้อ</dt><dd>7-Eleven 24 ชม. ประมาณ 200 ม.</dd>
       <dt>การเดินทาง</dt><dd>Asakusa · สถานี Tawaramachi (สาย Ginza)</dd>
       <dt>พิกัด</dt><dd class="mono">35.710672, 139.792037</dd>
-      <dt>รีวิว</dt><dd>Booking.com 8.3</dd>
+      <dt>รีวิว</dt><dd>Booking.com 8.3 · <a href="https://www.youtube.com/results?search_query=Hotel+Sunroute+Asakusa+review" target="_blank" rel="noopener">คลิปรีวิวอื่นบน YouTube</a></dd>
     </dl>
     <div class="scores"><p class="lbl">คะแนนแต่ละเรื่อง (เต็ม 10)</p><div class="srow"><span>ขนาดห้อง</span><span class="sbar"><i style="width:40%"></i></span><b>4</b></div><div class="srow"><span>ความคุ้ม</span><span class="sbar"><i style="width:99.0%"></i></span><b>9.9</b></div><div class="srow"><span>ที่จอดรถ</span><span class="sbar"><i style="width:10%"></i></span><b>1</b></div><div class="srow"><span>ร้านสะดวกซื้อ</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div><div class="srow"><span>อาหารเช้า</span><span class="sbar"><i style="width:50%"></i></span><b>5</b></div><div class="srow"><span>ขับไปเที่ยวสะดวก</span><span class="sbar"><i style="width:70%"></i></span><b>7</b></div></div>
   </details>
@@ -318,6 +322,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-of
 
 <footer class="foot">
   <p>ราคารวม 5 คืนที่ถูกที่สุดที่เจอบน Booking.com หรือ Agoda เมื่อ 26 ต.ค. 2026 บางเรทยกเลิกไม่ได้ ราคาเปลี่ยนทุกวัน ให้ดูราคาสุดท้ายในหน้าจองอีกครั้ง</p>
+  <p>คลิปรีวิว YouTube เป็นของคนทั่วไป เลือกคลิปที่ตรงชื่อโรงแรมไว้ให้แล้ว ถ้าอยากดูเพิ่ม กด “คลิปรีวิวอื่น” ในรายละเอียด</p>
   <p>ปุ่ม Agoda บางที่สร้างจากชื่อโรงแรม ถ้ากดแล้วไม่ใช่โรงแรมที่ถูก ให้ค้นชื่อโรงแรมใน Agoda แทน</p>
 </footer>
 </div>
